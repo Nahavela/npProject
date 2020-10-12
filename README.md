@@ -22,3 +22,16 @@
      - Guest : il peut voir les résultats.
     - L'api utilisé sera sans doute une api de meteo pour prévenir du temps le jour du tournoi
     
+## Maquette du site
+
+![WhatsApp Image 2020-10-12 at 11 50 07](https://user-images.githubusercontent.com/66432325/95745884-2a587500-0c96-11eb-90cf-c341ce6627e3.jpeg)
+
+## Charte graphique
+
+## Data details
+
+## Schéma de base de données
+
+## Autre
+
+
