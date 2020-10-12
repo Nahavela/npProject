@@ -11,5 +11,4 @@
     - Heroku + remote DBA
     - self-hosting
     - ...
-    
--Team challenge : solo
+- Team challenge : solo
