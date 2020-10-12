@@ -28,6 +28,8 @@
 
 ## Charte graphique
 
+https://www.figma.com/proto/1Eu02p8tntlVAwZ8J6DpdC/np?node-id=74%3A2226&scaling=scale-down
+
 ## Data details
 
 ## Schéma de base de données
