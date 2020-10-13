@@ -2,7 +2,7 @@
     .nav-content {
         overflow: hidden;
         position: fixed;
-        bottom:  0 !important;
+        bottom:  0 ;
         width: 100%;
         background-color : #263238;
     }
@@ -11,9 +11,31 @@
 
 body {
     background-color: #121212;
+    height : 100%;
 }
 
 .nav-content {
 
     background-color : #263238;
+}
+
+.center  {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -70%);
+    border : solid white;
+  }
+
+.centerimg{
+    max-width: 100%;
+}
+
+.bottom_flex {
+
+    border: solid white;
+    bottom: 0px;
+
+
 }

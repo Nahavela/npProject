@@ -3,27 +3,19 @@ const router = express.Router();
 const pageCtrl = require('../controllers/frontend');
 const auth = require('../middleware/auth');
 
-
+router.get('/home', pageCtrl.getHome);
 router.get('/', pageCtrl.getHome);
 router.get('/index', pageCtrl.getIndex);
-router.get('/about', pageCtrl.getAbout);
-router.get('/gallery', pageCtrl.getGallery);
-router.get('/contact-us', pageCtrl.getContact);
-router.get('/my-account', auth, pageCtrl.getAccount);
-
-router.get('/signUp', pageCtrl.getSignUp);
+router.get('/info', pageCtrl.getInfo);
 router.get('/login', pageCtrl.getLogin);
-router.get('/logout', pageCtrl.getLogout);
+router.get('/myaccount', auth, pageCtrl.getMyAccount);
 
-router.get('/userinfo', pageCtrl.userInfoPage);
-router.get('/edit-user', pageCtrl.getEditUser);
-router.get('/edit-pswd', pageCtrl.getEditPswd);
 
-router.get('/cart', pageCtrl.getCart);
-router.get('/checkout', pageCtrl.getCheckout);
-router.get('/shop-detail', pageCtrl.getDetail);
-router.get('/shop', pageCtrl.getShop);
-router.get('/wishlist', pageCtrl.getWishlist);
-router.get('/addproduct', pageCtrl.getAddProduct);
+router.get('/now', pageCtrl.getNow);
+router.get('/ranking', pageCtrl.getRanking);
+router.get('/register', pageCtrl.getRegister);
+router.get('/joinTeam', pageCtrl.getJoinTeam);
+router.get('/schedule', pageCtrl.getSchedule);
+
 
 module.exports = router;
