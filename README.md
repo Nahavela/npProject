@@ -24,7 +24,7 @@
     
 ## Maquette du site
 
-![WhatsApp Image 2020-10-12 at 11 50 07](https://user-images.githubusercontent.com/66432325/95745884-2a587500-0c96-11eb-90cf-c341ce6627e3.jpeg)
+![WhatsApp Image 2020-10-12 at 11 50 07](https://user-images.githubusercontent.com/66432325/95881299-bfcc3580-0d78-11eb-9572-52a5b68b1cd6.jpeg)
 
 ## Charte graphique
 
