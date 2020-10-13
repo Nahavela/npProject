@@ -1,0 +1,19 @@
+@media only screen and (max-width:600px) {
+    .nav-content {
+        overflow: hidden;
+        position: fixed;
+        bottom:  0 !important;
+        width: 100%;
+        background-color : #263238;
+    }
+
+}
+
+body {
+    background-color: #121212;
+}
+
+.nav-content {
+
+    background-color : #263238;
+}
