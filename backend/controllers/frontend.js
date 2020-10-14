@@ -6,18 +6,18 @@ global.fetch = require('node-fetch');
 
 
 
-exports.getHome = (req, res) => {res.render('pages/home', {menuId:'Home'})};
+exports.getHome = (req, res) => {res.render('pages/home', {menuId:'Tournament'})};
 exports.getIndex = (req, res) => {res.render('pages/index', {menuId:'Home'})};
 exports.getInfo = (req, res) => {res.render('pages/info', {page:'ABOUT US', menuId:'About Us'})};
-exports.getJoinTeam = (req, res) => {res.render('pages/joinTeam', {page: 'Services', menuId:'Gallery'})};
-exports.getLogin = (req, res) => {res.render('pages/login', {page: 'Contact Us', menuId:'Contact Us'})};
-exports.getMyAccount = (req, res) => {res.render('pages/myaccount', {page: 'My account', menuId:'Shop'})};
+exports.getJoinTeam = (req, res) => {res.render('pages/joinTeam', {page: 'Services', menuId:'Join team'})};
+exports.getLogin = (req, res) => {res.render('pages/login')};
+exports.getMyAccount = (req, res) => {res.render('pages/myaccount', {menuId:'My account'})};
 
-exports.getNow = (req, res) => {res.render('pages/now', {page: 'SignUp', menuId:'Home'})};
-exports.getRanking = (req, res) => {res.render('pages/ranking', {page: 'Login', menuId:'Home'})};
-exports.getRegister = (req, res) => { res.render('pages/register', {page: 'Login', menuId:'Home'})};
-exports.getRegister = (req, res) => { res.clearCookie('token'); res.redirect('/'); };
-exports.getSchedule = (req, res) => {res.render('pages/schedule', {page: 'Cart', menuId:'Shop'})};
+exports.getNow = (req, res) => {res.render('pages/now', {menuId:'Now playing'})};
+exports.getRanking = (req, res) => {res.render('pages/ranking', {menuId:'Ranking'})};
+exports.getRegister = (req, res) => { res.render('pages/register')};
+//exports.getRegister = (req, res) => { res.clearCookie('token'); res.redirect('/'); };
+exports.getSchedule = (req, res) => {res.render('pages/schedule', {menuId:'Schedule'})};
 
 
 exports.userInfoPage = async (req, res, next) => {
