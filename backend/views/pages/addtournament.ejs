@@ -1,0 +1,90 @@
+<%- include('../template/head')-%>
+<%- include('../template/navTournament')-%>
+<div class="row">
+    <form class="col s10 push-s1" action="http://localhost:3000/session/addTournament" method="POST">
+        <div class="row">
+            <div class="input-field col s6">
+                <input name="name" id="name" type="text" class="validate">
+                <label for="name">Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input  name="address" id="address" type="text" class="validate">
+                <label for="address">Address</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="team" id="team" type="text" class="validate">
+                <label for="team">Team</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="group" id="group" type="text" class="validate">
+                <label for="group">Group</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="date" type="text" class="datepicker">
+                <label for="date">Date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="Time" type="text" class="Timepicker">
+                <label for="Time">Time</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="numberOfTour" id="numberOfTour" type="text" class="validate">
+                <label for="numberOfTour">Number of tour</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="numberOfTeam" id="numberOfTeam" type="text" class="validate">
+                <label for="numberOfTeam">Number of team</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="numberOfGroup" id="numberOfGroup" type="text" class="validate">
+                <label for="numberOfGroup">Number of group</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="numberofPoint" id="numberofPoint" type="text" class="validate">
+                <label for="numberofPoint">Number of point</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="timeBetweenMatch" id="timeBetweenMatch" type="text" class="validate">
+                <label for="timeBetweenMatch">Time between match</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="timeOfMatch" id="timeOfMatch" type="text" class="validate">
+                <label for="timeOfMatch">Time between match</label>
+            </div>
+        </div>
+    <div class="row">
+        <div class="">
+            <input type="submit" id="submit" class="waves-effect waves-light btn btnIndex btnplein" value="Add">
+        </div>
+    </div>
+    <div class="row">
+        <div class="">
+           
+        </div>
+    </div>
+</div>
+
+</form>
+<%- include('../template/footer')-%>

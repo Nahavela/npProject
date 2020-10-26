@@ -2,8 +2,8 @@
   
   <nav class="nav-extended navbar-fixed blue-grey darken-4">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" class="brand-logo"><%= menuId %></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons menu">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
         <li><a href="/myaccount">My account</a></li>
@@ -14,13 +14,22 @@
   </nav>
 
   <div class="nav-content" >
-    <ul class="tabs tabs-transparent">
-      <li class="tab"><a class="active" href="/info">Info</a></li>
-      <li class="tab"><a href="/schedule">Schedule</a></li>
-      <li class="tab"><a href="/now">Now playing</a></li>
-      <li class="tab"><a href="/ranking">Ranking</a></li>
+    <ul class="tabs tabs-transparent" >
+      <li class="tab"><a <% if (menuId === 'Info') { %>class="active" <% } %> href="/info" target="_self"><span class="material-icons">
+        info
+        </span></a></li>
+      <li class="tab"><a <% if (menuId === 'Schedule') { %>class="active" <%} %> href="/schedule" target="_self"><span class="material-icons">
+        insert_invitation
+        </span></a></li>
+      <li class="tab"><a <% if (menuId === 'Now') { %>class="active" <%} %> href="/now" target="_self"><span class="material-icons">
+        sports
+        </span></a></li>
+      <li class="tab"><a <% if (menuId === 'Ranking') { %>class="active" <%} %> href="/ranking" target="_self"><span class="material-icons">
+        emoji_events
+        </span></a></li>
     </ul>
   </div>
+
 
 <ul class="sidenav" id="mobile-demo">
     <li><a href="/home">Home</a></li>

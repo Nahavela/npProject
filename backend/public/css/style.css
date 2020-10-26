@@ -4,7 +4,8 @@
         position: fixed;
         bottom:  0 ;
         width: 100%;
-        background-color : #263238;
+        background-color : rgb(38, 50, 56, 1);
+        z-index: 10000;
         
     }
     .btnIndex {
@@ -57,6 +58,11 @@ body {
     
     }
 
+.waves-effect input[type="submit"] {
+    font-size : 13px;
+    font-weight: bold;
+}
+
 .btnplein:hover {
 
     background-color: #f9aa33d3;
@@ -90,7 +96,7 @@ body {
     color :  #F9AA33;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, input:not([type=submit]) {
     color: rgb(255, 255, 255, 0.8);
 }
 
@@ -102,4 +108,121 @@ h1, h2, h3, h4 {
     display : flex;
     justify-content : space-evenly;
 
+}
+
+.carousel .carousel-item {
+    width: 100%;
+  }
+
+
+.tabs {
+    height : 10% !important;
+}
+
+.tab .material-icons:not(.menu)  {
+
+    line-height: 2 !important;
+}
+
+
+
+.tabs.tabs-transparent {
+    background-color:#263238 !important ;
+    
+}
+
+
+
+
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color:#F9AA33 !important;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid #F9AA33 !important;
+    box-shadow: 0 1px 0 0 #F9AA33 !important;
+  }
+ 
+  
+  /* label focus color */
+  .input-field input[type=password]:focus + label {
+    color:#F9AA33 !important;
+  }
+  /* label underline focus color */
+  .input-field input[type=password]:focus {
+    border-bottom: 1px solid #F9AA33 !important;
+    box-shadow: 0 1px 0 0 #F9AA33 !important;
+  }
+   /* label focus color */
+   .input-field input[type=email]:focus + label {
+    color:#F9AA33 !important;
+  }
+  /* label underline focus color */
+  .input-field input[type=email]:focus {
+    border-bottom: 1px solid #F9AA33 !important;
+    box-shadow: 0 1px 0 0 #F9AA33 !important;
+  }
+
+.btn_register {
+    text-align: center;
+    color: #121212;
+}
+
+.tabs.tabs-transparent .tab a.active {
+    color: #F9AA33 !important;
+}
+
+.tabs .indicator{
+    color: #F9AA33 !important;
+}
+
+.tabs.tabs-transparent .indicator{
+    background-color: #F9AA33 !important;
+}
+
+.btn {
+    text-align: center;
+}
+
+.bottom_flex3 {
+
+
+    width : 100%;
+    display : flex;
+    justify-content : space-evenly;
+
+}
+
+
+.content {
+    margin-top: 20px;
+}
+
+.card {
+    background-color:rgb(255, 255, 255, 0.1);
+   
+}
+
+.card-image {
+    height: 20vh;
+}
+
+.card-reveal {
+    background-color:	rgb(44, 44, 44) !important;
+   
+}
+
+.icon-grey {
+    color: 	rgb(44, 44, 44);
+}
+
+.card .card-content {
+    padding: 12px 10px 8px 12px; 
+}
+
+.btn-floating.halfway-fab {
+    position: absolute;
+    right: 24px;
+    bottom: 10px;
 }
