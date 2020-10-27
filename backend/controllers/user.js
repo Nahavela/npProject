@@ -20,7 +20,7 @@ User.findOne({ _id: req.params.id })
 exports.modifyUser = (req, res, next) => {
 	User.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
         .then(() => {
-            res.status(200).redirect('/userinfo');
+            res.status(200).redirect('/myAccount');
         }
         
         )

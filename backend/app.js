@@ -3,10 +3,11 @@ const express = require ('express');
 const mongoose = require('mongoose');
 const app = express (); 
 
-const shopRoutes = require('./routes/shop');
+const tournamentRoutes = require('./routes/tournament');
+const teamRoutes = require('./routes/team');
 const pageRoutes = require('./routes/frontend');
 const userRoutes = require('./routes/user');
-const sessionRoutes = require('./routes/session')
+const sessionRoutes = require('./routes/session');
 
 const cookieParser = require('cookie-parser');
 const methodOverride = require("method-override");
@@ -51,7 +52,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Vers ROUTES
-app.use('/api/shop', shopRoutes);
+app.use('/api/tournament', tournamentRoutes);
+app.use('/api/team', teamRoutes);
 app.use('/api/user', userRoutes);
 app.use('/', pageRoutes);
 app.use('/session', sessionRoutes);

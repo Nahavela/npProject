@@ -226,3 +226,8 @@ h1, h2, h3, h4, input:not([type=submit]) {
     right: 24px;
     bottom: 10px;
 }
+
+.btn-large {
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.1) !important;
+}
