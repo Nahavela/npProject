@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const sessionCtrl = require('../controllers/session');
-const auth = require('../middleware/auth');
+const sessionCtrl = require('../../controllers/backend/session');
+const auth = require('../../middleware/auth');
 
 
 

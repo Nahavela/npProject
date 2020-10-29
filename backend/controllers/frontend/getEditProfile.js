@@ -3,7 +3,8 @@ const jwt = require('jsonwebtoken');
 global.fetch = require('node-fetch');
 
 
-exports.getEditPswd = async (req, res, next) => {
+exports.getEditProfile = async (req, res, next) => {
+
     try {
         const token = req.cookies['token'];
         const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
@@ -19,7 +20,7 @@ exports.getEditPswd = async (req, res, next) => {
         let userInfo = await fetch(url, myInit);
         userInfo = await userInfo.json();
 
-        res.render('pages/changePasswordPage', {page: 'Edit pswd', menuId:'Home', userInfo});
+        res.render('pages/editProfilePage', {page: 'Edit profile', menuId:'Home', userInfo});
     } catch {
         res.status(401).json({error: 'Unauthenticated Request'});
     }

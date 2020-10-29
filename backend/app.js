@@ -1,16 +1,24 @@
+// ADD UTILES
 const express = require ('express');
 //const bodyParser = require ('body-parser');
 const mongoose = require('mongoose');
 const app = express (); 
-
-const tournamentRoutes = require('./routes/tournament');
-const teamRoutes = require('./routes/team');
-const pageRoutes = require('./routes/frontend');
-const userRoutes = require('./routes/user');
-const sessionRoutes = require('./routes/session');
-
 const cookieParser = require('cookie-parser');
 const methodOverride = require("method-override");
+
+//ROUTES BACKEND
+
+const tournamentRoutes = require('./routes/backend/tournament');
+const teamRoutes = require('./routes/backend/team');
+const userRoutes = require('./routes/backend/user');
+const sessionRoutes = require('./routes/backend/session');
+
+//ROUTES FRONTEND
+const pageRoutes = require('./routes/frontend/frontend');
+
+
+
+
 
 //let path = require('path');
 mongoose.set('useCreateIndex', true);
@@ -51,12 +59,14 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Vers ROUTES
+// Vers ROUTES BACKEND
 app.use('/api/tournament', tournamentRoutes);
 app.use('/api/team', teamRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/session', sessionRoutes);
+
+// Vers ROUTES FRONTEND
 app.use('/', pageRoutes);
-app.use('/session', sessionRoutes);
 
 
 

@@ -1,0 +1,41 @@
+
+<%- include('../template/head')-%>
+<%- include('../template/nav')-%>
+
+
+
+    <div class="container">
+        <h4>Edit your Profile</h4>
+        <form action="http://localhost:3000/api/user/<%= userInfo._id %>?_method=PUT" method="POST">
+            <div class="row">
+                <div class="input-field col s12">
+                        <label for="firstname">Firstname</label>
+                        <input value="<%= userInfo.firstname %>" type="text" id="firstname" name="firstname" required data-error="Please enter a correct firstname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                        <label for="lastname">Lastname</label>
+                        <input value="<%= userInfo.lastname %>" type="text" id="lastname" name="lastname" required data-error="Please enter a correct lastname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                        <label for="email">Email</label>
+                        <input value="<%= userInfo.email %>" type="email" id="email"  name="email" required data-error="Please enter a correct email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="bottom_flex3">
+                        <button class="waves-effect waves-light btn btnIndex btnplein" id="submit" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<%- include('../template/footer')-%>

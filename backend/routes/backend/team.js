@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Team = require('../models/Team');
-const teamCtrl = require('../controllers/team');
-const auth = require('../middleware/auth');
+const Team = require('../../models/Team');
+const teamCtrl = require('../../controllers/backend/team');
+const auth = require('../../middleware/auth');
 
 
 

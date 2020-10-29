@@ -3,44 +3,35 @@
 <%- include('../template/nav')-%>
 <div class="content">
     <div class="row">
+        <% Tournaments.forEach(function(tournament){ %>
         <div class="col s12">
             <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
                     <img class="activator" src="images/volley.jpg">
                 </div>
                 <div class="card-content">
-                    <span class="card-title activator blue-grey-text text-lighten-5">Card Title<i class="material-icons right">more_vert</i></span>
+                    <span class="card-title activator blue-grey-text text-lighten-5"><%= tournament.name %><i class="material-icons right">more_vert</i></span>
 
                 </div>
                 <div class="card-reveal">
-                    <span class="card-title  blue-grey-text text-lighten-5">Card Title<i class="material-icons right">close</i></span>
-                    <p class="blue-grey-text text-lighten-6">Date : 29/10/2021</p>
-                    <p class="blue-grey-text text-lighten-6">Address : rue des deux maison 1140</p>
+                    <span class="card-title  blue-grey-text text-lighten-5"><%= tournament.name %><i class="material-icons right">close</i></span>
+                    <p class="blue-grey-text text-lighten-6">Date : <%= tournament.date %></p>
+                    <p class="blue-grey-text text-lighten-6">Address : <%= tournament.address.address %> <%= tournament.address.city %> <%= tournament.address.code %></p>
                     <p class="blue-grey-text text-lighten-6">Weather : Cloudy</p>
-                    <a href="/info" class="btn-floating halfway-fab waves-effect waves-light yellow darken-3"><i class="material-icons icon-grey">add</i></a>
+                    <% if (userInfo.status == "admin") { %> 
+                        <a href="api/tournament/delete/<%= tournament._id %>" class="btn halfway-fab waves-effect waves-light yellow darken-3"><i class="material-icons icon-grey">edit</i></a>
+                        <a href="api/tournament/delete/<%= tournament._id %>" class="btn halfway-fab waves-effect waves-light yellow darken-3"><i class="material-icons icon-grey">delete</i></a>
+                        <% }; %>
+                    <a href="/info" class="btn halfway-fab waves-effect waves-light yellow darken-3"><i class="material-icons icon-grey">add</i></a>
+                    <p ></p>
                 </div>
             </div>
         </div>
+        <% }); %>
 
-
-        <div class="col s12">
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="images/volley.jpg">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator blue-grey-text text-lighten-5">Card Title<i class="material-icons right">more_vert</i></span>
-
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title  blue-grey-text text-lighten-5">Card Title<i class="material-icons right">close</i></span>
-                    <p><a class="blue-grey-text text-lighten-5" href="/info">Join this tournament</a></p>
-                    <p class="blue-grey-text text-lighten-6">Here is some more information about this product that is only revealed once clicked on.</p>
-                    <a href="/info" class="btn-floating halfway-fab waves-effect waves-light yellow darken-3"><i class="material-icons icon-grey">add</i></a>
-                </div>
-            </div>
-        </div>
-
+        <% if (userInfo.status == "admin") { %> 
+            <a href="/addtournament" class="btn-floating halfway-fab waves-effect waves-light yellow darken-3"><i class="material-icons icon-grey">add</i></a>
+            <% }; %>
 </div>
 
 

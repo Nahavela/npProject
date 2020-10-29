@@ -1,17 +1,29 @@
 <%- include('../template/head')-%>
 <%- include('../template/navTournament')-%>
 <div class="row">
-    <form class="col s10 push-s1" action="http://localhost:3000/session/addTournament" method="POST">
+    <form class="col s10 push-s1" action="http://localhost:3000/api/tournament/addTournament" method="POST">
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12">
                 <input name="name" id="name" type="text" class="validate">
                 <label for="name">Name</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s6">
-                <input  name="address" id="address" type="text" class="validate">
-                <label for="address">Address</label>
+            <div class="input-field col s12">
+                <input  name="address.address" id="address.address" type="text" class="validate">
+                <label for="address.address">Address</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input  name="address.city" id="address.city" type="text" class="validate">
+                <label for="address.city">City</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input  name="address.code" id="address.code" type="number" class="validate">
+                <label for="address.code">ZIP code</label>
             </div>
         </div>
         <div class="row">
@@ -22,20 +34,14 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input name="group" id="group" type="text" class="validate">
-                <label for="group">Group</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
                 <input name="date" type="text" class="datepicker">
                 <label for="date">Date</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input name="Time" type="text" class="Timepicker">
-                <label for="Time">Time</label>
+                <input name="time" type="text" class="timepicker">
+                <label for="time">Time</label>
             </div>
         </div>
         <div class="row">

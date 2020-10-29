@@ -1,5 +1,10 @@
+:root{
+    --main-color: #121212;
+    --second-color: #F9AA33;
+  }
+
 @media only screen and (max-width:600px) {
-    .nav-content {
+    .nav-content-bas {
         overflow: hidden;
         position: fixed;
         bottom:  0 ;
@@ -17,7 +22,7 @@
 }
 
 body {
-    background-color: #121212;
+    background-color: var(--main-color);
     height : 100%;
 }
 
@@ -65,7 +70,7 @@ body {
 
 .btnplein:hover {
 
-    background-color: #f9aa33d3;
+    background-color: var(--second-color);
     letter-spacing: 0px;
 
     }
@@ -78,22 +83,22 @@ body {
     }
 
 .btnvide {
-    background-color: #121212;
-    color : #F9AA33;
-    border : solid #F9AA33;
+    background-color: var(--main-color);
+    color : var(--second-color);
+    border : solid var(--second-color);
     line-height: 32px;
     border-width: 0.5px;
     
 }
 
 .btnplein {
-    background-color: #F9AA33;
-    color : #121212;
+    background-color: var(--second-color);
+    color : var(--main-color);
 
 }
 
 .center {
-    color :  #F9AA33;
+    color :  var(--second-color);
 }
 
 h1, h2, h3, h4, input:not([type=submit]) {
@@ -136,49 +141,49 @@ h1, h2, h3, h4, input:not([type=submit]) {
 
   /* label focus color */
   .input-field input[type=text]:focus + label {
-    color:#F9AA33 !important;
+    color:var(--second-color) !important;
   }
   /* label underline focus color */
   .input-field input[type=text]:focus {
-    border-bottom: 1px solid #F9AA33 !important;
-    box-shadow: 0 1px 0 0 #F9AA33 !important;
+    border-bottom: 1px solid var(--second-color) !important;
+    box-shadow: 0 1px 0 0 var(--second-color) !important;
   }
  
   
   /* label focus color */
   .input-field input[type=password]:focus + label {
-    color:#F9AA33 !important;
+    color:var(--second-color) !important;
   }
   /* label underline focus color */
   .input-field input[type=password]:focus {
-    border-bottom: 1px solid #F9AA33 !important;
-    box-shadow: 0 1px 0 0 #F9AA33 !important;
+    border-bottom: 1px solid var(--second-color) !important;
+    box-shadow: 0 1px 0 0 var(--second-color) !important;
   }
    /* label focus color */
    .input-field input[type=email]:focus + label {
-    color:#F9AA33 !important;
+    color:var(--second-color) !important;
   }
   /* label underline focus color */
   .input-field input[type=email]:focus {
-    border-bottom: 1px solid #F9AA33 !important;
-    box-shadow: 0 1px 0 0 #F9AA33 !important;
+    border-bottom: 1px solid var(--second-color) !important;
+    box-shadow: 0 1px 0 0 var(--second-color) !important;
   }
 
 .btn_register {
     text-align: center;
-    color: #121212;
+    color: var(--main-color);
 }
 
 .tabs.tabs-transparent .tab a.active {
-    color: #F9AA33 !important;
+    color: var(--second-color) !important;
 }
 
 .tabs .indicator{
-    color: #F9AA33 !important;
+    color: var(--second-color) !important;
 }
 
 .tabs.tabs-transparent .indicator{
-    background-color: #F9AA33 !important;
+    background-color: var(--second-color) !important;
 }
 
 .btn {
@@ -230,4 +235,44 @@ h1, h2, h3, h4, input:not([type=submit]) {
 .btn-large {
     width: 100%;
     background-color: rgb(255, 255, 255, 0.1) !important;
+}
+
+#yellow {
+    font-size: 2.28rem;
+    font-weight: 400;
+}
+
+.datepicker-date-display, .is-selected, .timepicker-digital-display {
+    background-color: var(--second-color) !important;
+}
+
+.datepicker-cancel, .datepicker-done, .is-today, .timepicker-close, .select-dropdown, .dropdown-trigger {
+    color:var(--second-color) !important;
+}
+
+
+.timepicker-tick:hover { background: var(--second-color) !important; }
+.timepicker-canvas line { stroke: var(--second-color) !important; }
+.timepicker-canvas-bearing { fill: var(--second-color) !important; }
+.timepicker-canvas-bg { fill: var(--second-color) !important; }
+
+.sidenav{
+    background-color: 	rgb(38, 50, 56);
+    
+}
+
+.sidenav a{
+    color: rgb(255, 255, 255, 0.8)!important;
+    
+}
+
+.btn-floating i {
+    color: var(--main-color) !important;
+
+}
+
+.btn-floating.halfway-fab {
+    position:fixed;
+    right:10px;
+    bottom:10px;
 }

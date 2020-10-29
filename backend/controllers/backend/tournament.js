@@ -1,11 +1,11 @@
-const Tournament = require('../models/Tournament');
+const Tournament = require('../../models/Tournament');
+
 
 exports.createTournament = (req, res, next) => {
-	const Tournament = new Tournament({
+	const tournament = new Tournament({
 		...req.body
 	});
-	Tournament
-		.save()
+	tournament.save()
 		.then(() => res.status(201).json({ message: 'Objet enregistré !' }))
 		.catch((error) => res.status(400).json({ error }));
 };

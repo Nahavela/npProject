@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 const tournamentSchema = mongoose.Schema({
   name: { type: String, required: true },
-  address: { type: String, required: true },
+  address: { 
+    address:{type: String, required: true},
+    city:{type: String, required: true},
+    code:{type: Number, required: true},
+  },
   team: { type: String, required: true },
   date: { type: String, required: true },
   numberOfTour: { type: Number, required: true },
