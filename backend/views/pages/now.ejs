@@ -1,4 +1,28 @@
 <%- include('../template/head'); %>
 <%- include('../template/navTournament')-%>
+<script type="text/javascript" src="/js/counter.js"></script>
+<div class="container">
+    <div class="row"></div>
+    <div class="row">
+    <div class="col s5 center-align"><h6>Team A</h6></div>
+    <div class="col s2 center-align vs"><h6>vs</h6></div>
+    <div class="col s5 center-align"><h6>Team B</h6></div>
+    </div>
+    <div class="row valign-wrapper">
+        <div id="inc1" type="button" onclick="player1()" class="col s5 center-align point">00</div>
+        <div class="col s2 center-align vs">:</div>
+        <div id="inc2" type="button" onclick="player2()" class="col s5  center-align point">00</div>
+        </div>
+        <div class="row"></div>
+        <div class="row valign-wrapper">
+            <div type="button" onclick="undo()" class="col s2 offset-s5 center-align btnvideretour">
+                <span class="material-icons history">
+                    history
+                    </span>
+            </div>
+ 
+
+</div>
+
 
 <%- include('../template/footer'); %>

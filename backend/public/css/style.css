@@ -101,7 +101,7 @@ body {
     color :  var(--second-color);
 }
 
-h1, h2, h3, h4, input:not([type=submit]) {
+h1, h2, h3, h4, h6, input:not([type=submit]) {
     color: rgb(255, 255, 255, 0.8);
 }
 
@@ -275,4 +275,60 @@ h1, h2, h3, h4, input:not([type=submit]) {
     position:fixed;
     right:10px;
     bottom:10px;
+}
+
+/** {
+    border: solid #F9AA33;
+}*/
+
+.point {
+    font-size: 4.2rem;
+    color: rgb(255, 255, 255, 0.8);
+    height: 41.6666666667%;
+    background-color: 	rgb(44, 44, 44);
+}
+
+.card, .point, .btn-floating {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.vs {
+    height: 100%;
+    color: rgb(255, 255, 255, 0.8);
+}
+
+.history {
+    font-family: 'Material Icons';
+    font-weight: thin;
+    font-style: normal;
+    font-size: 36px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    color: rgb(255, 255, 255, 0.8);
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+  .btnvideretour {
+    background-color: rgba(255, 255, 255, 0.021);
+    color : rgb(255, 255, 255, 0.8);
+   
+    line-height: 32px;
+    border-width: 0.5px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    
 }
