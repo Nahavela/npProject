@@ -5,10 +5,10 @@ const auth = require('../../middleware/auth');
 
 
 
-router.post('/addTournament', auth, tournamentCtrl.createTournament);
+router.post('/addTournament',  tournamentCtrl.createTournament);
 router.get('/', tournamentCtrl.getAllStuff);
-router.get('/:id', auth, tournamentCtrl.getOneTournament);
-router.put('/:id', auth, tournamentCtrl.modifyTournament );
-router.get('/delete/:id', auth, tournamentCtrl.deleteTournament );
+router.get('/:id',  tournamentCtrl.getOneTournament);
+router.put('/:id', tournamentCtrl.modifyTournament );
+router.get('/delete/:id',  tournamentCtrl.deleteTournament );
 
 module.exports = router;

@@ -10,6 +10,7 @@ router.put('/:id',  userCtrl.modifyUser);
 router.put('/pswd/:id',  userCtrl.modifyPassword );
 router.get('/deleteAccount/del',  userCtrl.deleteUser );
 router.get('/user/:id', userCtrl.getOneUser);
+router.get('/updateTeamUser/:id', userCtrl.updateTeamUser);
 
 
 

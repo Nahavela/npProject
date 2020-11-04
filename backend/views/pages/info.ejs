@@ -1,8 +1,77 @@
 <%- include('../template/head')-%>
 
 <%- include('../template/navTournament')-%>
+<script type="text/javascript" src="/js/team.js"></script>
+<div class="nav-content" >
+    <ul class="tabs tabs-transparent" id="tabs" >
+        <li class="tab col s6"><a href="#team">Team</a></li>
+        <li class="tab col s6"><a href="#group">Group</a></li>
+    </ul>
+</div>
+
+<div id="team">
+    <div class="content">
+        <% if (!userInfo.team[0] || userInfo.team[1] != tournament._id ) {%>
+        <div class="row">
 
 
+
+            <div class="col s12 center-align">
+                <h4 id="choose">Choose your team !</h4>
+            </div>
+        </div>
+    <% tournament.team.forEach(element => {%>
+        <div class="row">
+            <a id="<%= element%>" class="col s10 offset-s1 center-align teamdiv" href="/api/user/updateTeamUser/<%=userInfo._id%>?team=<%= element%>&teamId=<%=tournament._id%>" onclick="chooseteam(this.id)">
+                <h4><%= element%></h4>
+            </a>
+           
+        </div>
+    <%}); %>
+    <%}else{ %>
+        <div class="row">
+
+
+
+            <div class="col s12 center-align">
+                <h4 id="choose">Your team :</h4>
+            </div>
+        </div>
+        <div class="row">
+            <a id="<%= userInfo.team[0] %>" class="col s10 offset-s1 center-align teamdiv" >
+                <h4><%= userInfo.team[0]%></h4>
+            </a>
+        </div>
+        <div class="row">
+            <div class="col s10 offset-s1">
+       
+
+          <!-- Modal Trigger -->
+  <a class="waves-effect waves-light  modal-trigger" href="#modal1">Not your team ? Wanna change team ? </a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+        <% tournament.team.forEach(element => {%>
+            <div class="row">
+                <a id="<%= element%>" class="col s10 offset-s1 center-align teamdiv" href="/api/user/updateTeamUser/<%=userInfo._id%>?team=<%= element%>&teamId=<%=tournament._id%>" onclick="chooseteam(this.id)">
+                    <h4><%= element%></h4>
+                </a>
+               
+            </div>
+        <%}); %>
+    </div>
+
+  </div>
+    </div>
+    </div>
+        <%}; %>
+    </div>
+</div>
+
+<div id="group">
+
+</div>
 
 <%- include('../template/footer')-%>
 

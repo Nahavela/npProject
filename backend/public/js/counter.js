@@ -1,4 +1,4 @@
-count=0,count1=0,count2=0,w1=0,w2=0;
+count="0"+0,count1=0,count2=0,w1=0,w2=0;
 let history = ["0"];
 let historyorder = ["C"];
     function player1()
@@ -60,6 +60,8 @@ let historyorder = ["C"];
         document.getElementById("inc1").innerHTML=count;
         document.getElementById("inc2").innerHTML=count;
         count1=0,count2=0;
+        history = ["0"];
+        historyorder = ["C"];
     }
 
 
@@ -84,7 +86,7 @@ let historyorder = ["C"];
 
                 count1-=1;
             }
-        }else if (historyorder[historyorder.length - 1]=="B"){
+        } else if (historyorder[historyorder.length - 1]=="B"){
             if (history[history.length - 1]<=10) {
     
                 document.getElementById("inc2").innerHTML="0"+(history[history.length - 1]-1);
@@ -92,7 +94,7 @@ let historyorder = ["C"];
                 historyorder.pop();
 
                 count2-=1;
-        }
+            }
             else if (history[history.length - 1]>10) {
  
                 document.getElementById("inc2").innerHTML=history[history.length - 1]-1;

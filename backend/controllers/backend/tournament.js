@@ -1,9 +1,10 @@
 const Tournament = require('../../models/Tournament');
-
+const myModule = require('../../public/js/createGroup');
 
 exports.createTournament = (req, res, next) => {
 	const tournament = new Tournament({
-		...req.body
+		...req.body,
+		group : myModule.split(req.body.team, req.body.numberOfGroup),
 	});
 	tournament.save()
 		.then(() => res.status(201).json({ message: 'Objet enregistré !' }))

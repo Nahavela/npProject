@@ -70,7 +70,17 @@ exports.modifyPassword = (req, res, next) => {
             .catch((error) => res.status(400).json({ error }));})
     });})}else{return res.status(401).json({error: 'Password doesnt match'});}}
 
+    exports.updateTeamUser = (req, res, next) => {
 
+        User.updateOne({ _id: req.params.id }, { team: [req.query.team, req.query.teamId]})
+            .then(() => {
+                res.status(200).redirect(`/info/${req.query.teamId}`);
+            }
+            
+            )
+            
+            .catch((error) => res.status(400).json({ error }));
+    };
 
 
 

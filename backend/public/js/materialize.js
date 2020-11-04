@@ -5,7 +5,12 @@
     var instances = M.Sidenav.init(elems, {});
     var el = document.querySelector('.tabs');
     var instance = M.Tabs.init(el, {});
+
   });
+
+  var el = document.getElementById('tabs')
+var instance = M.Tabs.init(el, {swipeable: true})
+
 
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -21,5 +26,10 @@
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.timepicker');
     var instances = M.Timepicker.init(elems, { autoClose:true});
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
   });
 

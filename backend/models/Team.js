@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const teamSchema = mongoose.Schema({
   name: { type: String, required: true },
   level: { type: String, required: true },
-  player: { type: String },
+  player: { type: Array },
   group: { type: String, required: true },
   tournament: { type: String, required: true },
   point: { type: Number },
