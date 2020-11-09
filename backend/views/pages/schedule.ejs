@@ -1,4 +1,50 @@
 <%- include('../template/head')-%>
 <%- include('../template/navTournament')-%>
 
+<div class="content">
+    <div class="row"></div>
+    <% for (i=0;i<score.schedule[0].length;i++){%>
+        <div class="row groupdiv">
+            <div class="col s12 center-align line">
+                <h5><%= tournament.time %></h5>
+            </div>
+            
+        <% for (j=0;j<score.schedule.length;j++){%>
+            <div class="col s12 center-align underline">
+                <h6>Court <%= j+1 %></h6>
+                <hr style="width:50%;text-align:left;height:0.1px">
+            </div>            
+            
+            <% for (k=0;k<score.schedule[j][i].length;k++){%>
+                <%  if (k==0){%>
+                <div class="col s2 center-align">
+                    <span <%  if (score.schedule[j][i][k]==userInfo.team[0]){%> class="material-icons yellowcolor schedule-icons"<%}else{%> class="material-icons schedule-icons schedule-icons-white"<%}%>>
+                        local_police
+                    </span>
+                </div>
+                <%}%>
+
+                <div class="col s4 center-align">
+                    <h6 <%  if (score.schedule[j][i][k]==userInfo.team[0]){%>class="yellowcolor"<%}%>>  
+                        <%= score.schedule[j][i][k] %>
+                    </h6>
+                </div>
+
+                <%  if (k==1){%>
+                <div class="col s2 center-align">
+                    <span <%  if (score.schedule[j][i][k]==userInfo.team[0]){%> class="material-icons yellowcolor schedule-icons"<%}else{%> class="material-icons schedule-icons schedule-icons-white"<%}%>>
+                        security
+                    </span>
+                </div>
+                <%}%>
+                
+
+            <%}%>
+
+        <%}%>
+        </div>
+    <%}; %>
+    </div>
+</div>
+
 <%- include('../template/footer')-%>

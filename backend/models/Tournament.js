@@ -7,6 +7,7 @@ const tournamentSchema = mongoose.Schema({
     city:{type: String, required: true},
     code:{type: Number, required: true},
   },
+  time: {type: String, required: true},
   group : { type: Object },
   team: { type: Array, required: true },
   date: { type: String, required: true },

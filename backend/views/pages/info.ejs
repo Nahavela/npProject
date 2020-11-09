@@ -70,7 +70,26 @@
 </div>
 
 <div id="group">
-
+    <div class="content">
+        <div class="row"></div>
+    
+        <% for (i=0;i<tournament.group.length;i++){%>
+            
+                <div class="row groupdiv">
+                    <div class="col s10 offset-s1 center-align">
+                        <h5>Group <%= i+1%></h5>
+                    </div>
+                    <% tournament.group[i].forEach(element => {%>
+                    <div class="col 
+                    <% if (tournament.group[i].length == 2) {%>s6<%} else if (tournament.group[i].length == 4) {%>s3<%} else if (tournament.group[i].length == 6) {%>s4<%}else if (tournament.group[i].length == 8) {%>s3<%} else  {%>s6<%}%>
+                    center-align">
+                        <h6 <%  if (element==userInfo.team[0]){%>class="yellowcolor"<%}%>><%= element%></h6>
+                    </div><%})%>
+                    
+                </div>
+                
+        <%}; %>
+    </div>
 </div>
 
 <%- include('../template/footer')-%>

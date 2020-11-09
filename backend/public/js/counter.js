@@ -105,22 +105,3 @@ let historyorder = ["C"];
             }
         }  
     }
-
-
-let array = ["a","b","c","d","e","f"];
-
-let array2 = []
-for (i=1,j=0;i<=array.length,j<array.length;i++){
-    if (i==array.length){
-        j++;
-        i = 0+j
-    }else{if( j != i) {
-        let arr= [array[j]];
-        arr.push(array[i]);
-        array2.push(arr)
-    }}
-
-
-}
-console.log(array2)
-

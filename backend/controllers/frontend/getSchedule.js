@@ -24,9 +24,14 @@ exports.getSchedule = async (req, res, next) => {
     let tournament = await fetch(urlTournament, myInit);
     tournament = await tournament.json();
   
+    let urlScore = `http://localhost:3000/api/score/${req.params.id}`;
+    let score = await fetch(urlScore, myInit);
+    score = await score.json();
+
+   
 
 
-    res.render(`pages/schedule`, {menuId:'Schedule', userInfo, tournament})
+    res.render(`pages/schedule`, {menuId:'Schedule', userInfo, tournament, score})
 
 } catch {
 

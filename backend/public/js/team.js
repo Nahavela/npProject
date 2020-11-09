@@ -7,6 +7,4 @@ for (i=0; i<(document.getElementsByClassName("teamdiv").length); i++)
     }
 }
 
-function displayallteam(){
-  let teamUser = null
-}
+

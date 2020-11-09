@@ -11,6 +11,7 @@
         width: 100%;
         background-color : rgb(38, 50, 56, 1);
         z-index: 10000;
+        display: block;
         
     }
     .btnIndex {
@@ -97,11 +98,11 @@ body {
 
 }
 
-.center {
+.center, .yellowcolor {
     color :  var(--second-color);
 }
 
-h1, h2, h3, h4, h6, input:not([type=submit]) {
+h1, h2, h3, h4, h6, h5, input:not([type=submit]) {
     color: rgb(255, 255, 255, 0.8);
 }
 
@@ -129,7 +130,13 @@ h1, h2, h3, h4, h6, input:not([type=submit]) {
     line-height: 2 !important;
 }
 
-
+.schedule-icons {
+    line-height: inherit;
+    
+}
+.schedule-icons-white{
+    color:rgba(255,255,255,0.2);
+}
 
 .tabs.tabs-transparent {
     background-color:#263238 !important ;
@@ -204,7 +211,17 @@ h1, h2, h3, h4, h6, input:not([type=submit]) {
 
 
 .content {
-    margin-top: 20px;
+
+    height: calc(100% - 120px); 
+    overflow-x:hidden; 
+    overflow-y: scroll;
+}
+
+.contenthome {
+
+    height: calc(100% - 80px);
+    overflow-x:hidden; 
+    overflow-y: scroll;
 }
 
 .card {
@@ -237,7 +254,7 @@ h1, h2, h3, h4, h6, input:not([type=submit]) {
 
 .btn-large {
     width: 100%;
-    background-color: rgb(255, 255, 255, 0.1) !important;
+    background-color:rgb(173, 192, 203, 0.04) !important;
 }
 
 #yellow {
@@ -284,14 +301,22 @@ h1, h2, h3, h4, h6, input:not([type=submit]) {
     border: solid #F9AA33;
 }*/
 
-.point, .teamdiv {
+.point {
     font-size: 4.2rem;
     color: rgb(255, 255, 255, 0.8);
     height: 41.6666666667%;
     background-color: 	rgb(173, 192, 203, 0.04)
 }
 
-.card, .point, .btn-floating, .teamdiv, .modal {
+.teamdiv, .groupdiv {
+
+    background-color: 	rgb(173, 192, 203, 0.04)
+}
+.groupdiv {
+    width: 90vw;
+}
+
+.card, .point, .btn-floating, .teamdiv, .modal, .btn-large, .groupdiv {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -367,10 +392,24 @@ h1, h2, h3, h4, h6, input:not([type=submit]) {
 
 
 
-  .tabs-content.carousel, .content { height: 100%; overflow-x:hidden; overflow-y: scroll; } 
-  .tabs-content.carousel .carousel-item { height: 100%; } 
+  .tabs-content.carousel, .carousel-item { height: calc(100% - 48px); overflow-x:hidden; overflow-y: scroll; } 
   html,body{ overflow:hidden; height:100%; }
 
-.modal {
+#modal1 {
     background-color: rgb(24, 25, 25);;
+}
+
+.groupdiv {
+    padding-bottom: 10px;
+}
+
+.line {
+    border-bottom: solid;
+    color : rgb(255, 255, 255, 0.2);
+    border-width: 1px;
+    margin-bottom: 10px;
+}
+
+.underline {
+margin-bottom: 10px;
 }

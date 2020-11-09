@@ -9,7 +9,7 @@ const methodOverride = require("method-override");
 //ROUTES BACKEND
 
 const tournamentRoutes = require('./routes/backend/tournament');
-const teamRoutes = require('./routes/backend/team');
+const scoreRoutes = require('./routes/backend/score');
 const userRoutes = require('./routes/backend/user');
 const sessionRoutes = require('./routes/backend/session');
 
@@ -61,7 +61,7 @@ app.use(cookieParser());
 
 // Vers ROUTES BACKEND
 app.use('/api/tournament', tournamentRoutes);
-app.use('/api/team', teamRoutes);
+app.use('/api/score', scoreRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/session', sessionRoutes);
 
