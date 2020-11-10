@@ -81,7 +81,7 @@
                     </div>
                     <% tournament.group[i].forEach(element => {%>
                     <div class="col 
-                    <% if (tournament.group[i].length == 2) {%>s6<%} else if (tournament.group[i].length == 4) {%>s3<%} else if (tournament.group[i].length == 6) {%>s4<%}else if (tournament.group[i].length == 8) {%>s3<%} else  {%>s6<%}%>
+                    <% if (tournament.group[i].length == 2) {%>s6<%} else if (tournament.group[i].length == 4 || tournament.group[i].length == 8 ) {%>s3<%} else if (tournament.group[i].length == 6 ||tournament.group[i].length == 3) {%>s4<%}else  {%>s6<%}%>
                     center-align">
                         <h6 <%  if (element==userInfo.team[0]){%>class="yellowcolor"<%}%>><%= element%></h6>
                     </div><%})%>

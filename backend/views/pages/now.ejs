@@ -1,28 +1,31 @@
 <%- include('../template/head'); %>
 <%- include('../template/navTournament')-%>
 <script type="text/javascript" src="/js/counter.js"></script>
-<div class="container">
-    <div class="row"></div>
-    <div class="row">
-    <div class="col s5 center-align"><h6>Team A</h6></div>
-    <div class="col s2 center-align vs"><h6>vs</h6></div>
-    <div class="col s5 center-align"><h6>Team B</h6></div>
-    </div>
-    <div class="row valign-wrapper">
-        <div id="inc1" type="button" onclick="player1()" class="col s5 center-align point">00</div>
-        <div class="col s2 center-align vs">:</div>
-        <div id="inc2" type="button" onclick="player2()" class="col s5  center-align point">00</div>
-        </div>
-        <div class="row"></div>
-        <div class="row valign-wrapper">
-            <div type="button" onclick="undo()" class="col s2 offset-s5 center-align btnvideretour">
-                <span class="material-icons history">
-                    history
-                    </span>
+<div class="content">
+
+    <% let text =new Date().toLocaleTimeString(); 
+    for (i=0;i<score.schedule.length;i++){ if (i != score.schedule.length-1){ if ((parseInt(text.slice(0, 2))==parseInt(score.schedule[i].slice(0, 2)) && parseInt(text.slice(3, 5))>=parseInt(score.schedule[i].slice(3, 5)) && parseInt(text.slice(3, 5))<parseInt(score.schedule[i+1].slice(3, 5)))||(parseInt(text.slice(0, 2))+1==parseInt(score.schedule[i].slice(0, 2)) && parseInt(text.slice(0, 2))==parseInt(score.schedule[i+1].slice(0, 2)) && parseInt(text.slice(3, 5))<parseInt(score.schedule[i+1].slice(3, 5)))){%>
+    
+        <% for (k=0;k<score.match.length;k++){%>
+            <div class="row groupdiv">
+                <div class="col s10 offset-s1 center-align">
+                    <h5>Team <%= score.match[k][i][0] %> vs <%= score.match[k][i][1] %></h5>
+                </div>
             </div>
+        <%};%>
+
+        <%}%> <%}else if{((parseInt(text.slice(0, 2))==parseInt(score.schedule[i].slice(0, 2)) && parseInt(text.slice(3, 5))>=parseInt(score.schedule[i].slice(3, 5))))){%>
+        
+        <% for (k=0;k<score.match.length;k++){%>
+            <div class="row groupdiv">
+                <div class="col s10 offset-s1 center-align">
+                    <h5>Team <%= score.match[k][i][0] %> vs <%= score.match[k][i][1] %></h5>
+                </div>
+            </div><%};};}%>
+</div>
+            
  
 
-</div>
 
 
 <%- include('../template/footer'); %>

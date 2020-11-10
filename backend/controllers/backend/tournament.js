@@ -32,7 +32,8 @@ try {
 		_id: tournament.id,
 		team: myModule.createTeam(req.body.team),
 		group : tournament.group,
-		schedule : myModule.createMatch(tournament.group) ,
+		match : myModule.createMatch(tournament.group) ,
+		schedule : myModule.schedule(tournament.time, tournament.timeOfMatch, tournament.timeBetweenMatch, myModule.createMatch(tournament.group) )
 
 	});
 

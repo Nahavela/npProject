@@ -18,7 +18,7 @@
                     <span class="card-title  blue-grey-text text-lighten-5"><%= tournament.name %><i class="material-icons right">close</i></span>
                     <p class="blue-grey-text text-lighten-6">Date : <%= tournament.date %></p>
                     <p class="blue-grey-text text-lighten-6">Address : <%= tournament.address.address %> <%= tournament.address.city %> <%= tournament.address.code %></p>
-                    <p class="blue-grey-text text-lighten-6">Weather : Cloudy</p>
+                    <p class="blue-grey-text text-lighten-6">Time : <%= tournament.time %></p>
                     <% if (userInfo.status == "admin") { %> 
                         <a href="api/tournament/update/<%= tournament._id %>" class="btn halfway-fab waves-effect waves-light yellow darken-3"><i class="material-icons icon-grey">edit</i></a>
                         <a href="api/tournament/delete/<%= tournament._id %>" class="btn halfway-fab waves-effect waves-light yellow darken-3"><i class="material-icons icon-grey">delete</i></a>

@@ -25,7 +25,7 @@ var instance = M.Tabs.init(el, {swipeable: true})
   
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.timepicker');
-    var instances = M.Timepicker.init(elems, { autoClose:true});
+    var instances = M.Timepicker.init(elems, { autoClose:true, twelveHour:false});
   });
 
   document.addEventListener('DOMContentLoaded', function() {

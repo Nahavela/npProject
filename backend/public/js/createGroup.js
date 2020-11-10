@@ -22,7 +22,7 @@ function splitTeams(names, teams_count) {
 createMatch:
 
 
-function createSchedule(array){
+function createMatch(array){
     let array2 = []
     let array3 = []
     for (i=0;i<array.length;i++){
@@ -76,6 +76,46 @@ function createteam(array1){
     let objectFini =convertArrayToObject(arr,'name');
     return objectFini
 },
+
+
+schedule :
+function schedule(time, timOfMatch, timeBetweenMatch, numberOfMatch){
+
+    let schedule = [];
+    let numberMatch = numberOfMatch[0].length
+    for (i=0;i<numberMatch;i++){
+    
+    
+    let h = parseInt(time.slice(0, 2));
+    let min = parseInt(time.slice(3, 5));
+    let add = i*(timOfMatch+timeBetweenMatch);
+    let hours = Math.floor(add / 60);          
+    let minutes = add % 60;
+    
+    h += hours;
+    min += minutes;
+    if (min>59){
+        min= min-60
+        h++
+    }
+    if (min<10){
+        min = "0"+min
+    }
+    if (h>23){
+        h = h-24
+        if (h<10){
+            h = "0"+h
+        }
+    } else if (h<10){
+        h = "0"+h
+    }
+    let hour = h+":"+min
+    schedule.push(hour)
+    
+    
+    
+    }return schedule
+    },
 
 }
 
