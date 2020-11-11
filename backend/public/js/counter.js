@@ -3,7 +3,8 @@ let history = ["0"];
 let historyorder = ["C"];
     function player1()
     {
-        let m = 25;
+        let m = tournament.numberOfPoint;
+        
         count1+=1;   
 
         if (count1<10) {
@@ -23,6 +24,7 @@ let historyorder = ["C"];
         if (m==count1)
         {
             alert("The game is finished !!");
+            sendResults();
             reset();
             
         }
@@ -31,7 +33,7 @@ let historyorder = ["C"];
     function player2()
     {
 
-    let m = 25;
+    let m = tournament.numberOfPoint;
     count2+=1;   
         if (count2<10) {
             document.getElementById("inc2").innerHTML="0"+count2;
@@ -51,6 +53,7 @@ let historyorder = ["C"];
         if (m==count2)
         {
             alert("The game is finished !!");
+            sendResults();
             reset();
         }
     }
@@ -104,4 +107,17 @@ let historyorder = ["C"];
                 count2-=1;  
             }
         }  
+    }
+    function sendResults()
+    {
+        document.getElementById("resultAB").style.display="block";
+
+        document.getElementById("resultA").innerHTML=count1;
+        document.getElementById("resultB").innerHTML=count2;
+    }
+    function hide()
+    {
+        document.getElementById("resultAB").style.display="none";
+
+      
     }

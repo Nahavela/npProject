@@ -41,12 +41,29 @@ document.getElementsByClassName("target")[i].innerHTML = h+":"+min;
 
 }
 for (i=0;i<arr.length;i++){
+
+    let heureActuelle = parseInt(texte.slice(0, 2));
+    let minuteActuelle =  parseInt(texte.slice(3, 5));
+    let heure = parseInt(arr[i].innerHTML.slice(0, 2));
+    let minute = parseInt(arr[i].innerHTML.slice(3, 5));
+    let tpsActuel= heureActuelle*60 + minuteActuelle;
+    let tps = heure*60 + minute;
     if (i != arr.length-1){
-    if ((parseInt(texte.slice(0, 2))==parseInt(arr[i].innerHTML.slice(0, 2)) && parseInt(texte.slice(3, 5))>=parseInt(arr[i].innerHTML.slice(3, 5)) && parseInt(texte.slice(3, 5))<parseInt(arr[i+1].innerHTML.slice(3, 5)))||(parseInt(texte.slice(0, 2))+1==parseInt(arr[i].innerHTML.slice(0, 2)) && parseInt(texte.slice(0, 2))==parseInt(arr[i+1].innerHTML.slice(0, 2)) && parseInt(texte.slice(3, 5))<parseInt(arr[i+1].innerHTML.slice(3, 5)))){
-    //document.getElementsByClassName("target")[i].parentNode.parentNode.style.backgroundColor = "rgba(206, 204, 100, 0.1)" ;
-    document.getElementsByClassName("target")[i].parentNode.parentNode.style.boxShadow= "0px 0px 5px 4px rgba(231,166,26,0.45)";}
-}else{
-        if (parseInt(texte.slice(0, 2))==parseInt(arr[i].innerHTML.slice(0, 2)) && parseInt(texte.slice(3, 5))>=parseInt(arr[i].innerHTML.slice(3, 5))){
+    let heurePlusUn = parseInt(arr[i+1].innerHTML.slice(0, 2));
+    let minutePlusUn = parseInt(arr[i+1].innerHTML.slice(3, 5));
+    let tpsPlusUn = heurePlusUn*60 + minutePlusUn;
+        if (
+                
+                (tpsActuel>=tps)&&(tpsActuel<tpsPlusUn)
+                    
+          
+            ){
+                //document.getElementsByClassName("target")[i].parentNode.parentNode.style.backgroundColor = "rgba(206, 204, 100, 0.1)" ;
+                document.getElementsByClassName("target")[i].parentNode.parentNode.style.boxShadow= "0px 0px 5px 4px rgba(231,166,26,0.45)";}
+    }else{
+        if (
+            (tpsActuel>=tps)
+            ){
         //document.getElementsByClassName("target")[i].parentNode.parentNode.style.backgroundColor = "rgba(206, 204, 100, 0.1)" ;
         document.getElementsByClassName("target")[i].parentNode.parentNode.style.boxShadow= "0px 0px 5px 4px rgba(231,166,26,0.45)";}}
 }

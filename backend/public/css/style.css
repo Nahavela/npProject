@@ -131,7 +131,7 @@ h1, h2, h3, h4, h6, h5, input:not([type=submit]) {
 }
 
 .schedule-icons {
-    line-height: inherit;
+    line-height: 2;
     
 }
 .schedule-icons-white{
@@ -308,7 +308,7 @@ h1, h2, h3, h4, h6, h5, input:not([type=submit]) {
     background-color: 	rgb(173, 192, 203, 0.04)
 }
 
-.teamdiv, .groupdiv {
+.teamdiv, .groupdiv, .groupdiv2 {
 
     background-color: 	rgb(173, 192, 203, 0.04)
 }
@@ -316,7 +316,13 @@ h1, h2, h3, h4, h6, h5, input:not([type=submit]) {
     width: 90vw;
 }
 
-.card, .point, .btn-floating, .teamdiv, .modal, .btn-large, .groupdiv {
+.groupdiv2 {
+    width: 85vw;
+    margin-left : auto !important;
+    margin-right: auto !important;
+}
+
+.card, .point, .btn-floating, .teamdiv, .modal, .btn-large, .groupdiv, .groupdiv2 {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -412,4 +418,8 @@ h1, h2, h3, h4, h6, h5, input:not([type=submit]) {
 
 .underline {
 margin-bottom: 10px;
+}
+
+.white-text {
+    color: white;
 }

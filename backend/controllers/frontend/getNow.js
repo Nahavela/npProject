@@ -40,3 +40,41 @@ exports.getNow = async (req, res, next) => {
 
     
 };
+
+exports.getNowPlaying = async (req, res, next) => {
+
+    try {
+    const token = req.cookies['token'];
+    const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
+    const userId = decodedToken.userId;
+    let url = `http://localhost:3000/api/user/user/${userId}`;
+    myInit = {
+        headers: {
+            'Authorization': 'Bearer ' + token
+        }
+    };
+    let userInfo = await fetch(url, myInit);
+    userInfo = await userInfo.json();
+    
+
+    let urlTournament = `http://localhost:3000/api/tournament/${req.params.id}`;
+    let tournament = await fetch(urlTournament, myInit);
+    tournament = await tournament.json();
+
+    let urlScore = `http://localhost:3000/api/score/${req.params.id}`;
+    let score = await fetch(urlScore, myInit);
+    score = await score.json();
+    i = req.query.i;
+    k = req.query.k;
+
+
+    res.render(`pages/nowPlaying`, {menuId:'Now Playing', userInfo, tournament, score, i, k})
+
+} catch {
+
+    res.status(401).json({error: 'Bad Request'});
+}
+
+
+    
+};

@@ -1,0 +1,55 @@
+<%- include('../template/head'); %>
+<%- include('../template/navTournament')-%>
+<script>
+    let tournament = <%- JSON.stringify(tournament) -%> ; //Outputs the unescaped value into the template
+</script>
+<script type="text/javascript" src="/js/counter.js"></script>
+
+<!------------------------------------------------------------------------------------------->
+
+
+<div class="content">
+    <div class="row"></div>
+    <div class="row">
+        <div class="col s5 center-align"><h6><%= score.match[k][i][0]%></h6></div>
+        <div class="col s2 center-align vs"><h6>vs</h6></div>
+        <div class="col s5 center-align"><h6><%= score.match[k][i][1]%></h6></div>
+    </div>
+    <div class="row valign-wrapper">
+        <div id="inc1" type="button" onclick="player1()" class="col s5 center-align point">00</div>
+        <div class="col s2 center-align vs">:</div>
+        <div id="inc2" type="button" onclick="player2()" class="col s5  center-align point">00</div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row valign-wrapper">
+        <div type="button" onclick="undo()" class="col s2 offset-s5 center-align btnvideretour">
+            <span class="material-icons history">
+                history
+                </span>
+        </div>
+    </div>
+    <div id="resultAB" class="row groupdiv" style="display:none">
+        <div class="col s12 center-align "><h6>Is this result correct ? </h6></div>
+        <div id="resultA"  class="col s4 center-align white-text"> </div>
+    
+        <div   class="col s4 center-align white-text"> -</div>
+        <div id="resultB"  class="col s4 center-align white-text"> </div>
+        <div class="col s6 center-align white-text">
+            <div type="button" onclick="undo()" class=" btnvideretour">
+                <span class="material-icons history">
+                    check
+                </span> 
+            </div>
+        </div>
+        <div class="col s6 center-align white-text">
+            <div type="button" onclick="hide()" class=" btnvideretour">
+                <span class="material-icons history">
+                    clear
+                </span> 
+            </div>
+        </div>
+    </div>
+<!------------------------------------------------------------------------------------------->
+
+<%- include('../template/footer'); %>

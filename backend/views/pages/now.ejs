@@ -2,29 +2,104 @@
 <%- include('../template/navTournament')-%>
 <script type="text/javascript" src="/js/counter.js"></script>
 <div class="content">
-
-    <% let text =new Date().toLocaleTimeString(); 
-    for (i=0;i<score.schedule.length;i++){ if (i != score.schedule.length-1){ if ((parseInt(text.slice(0, 2))==parseInt(score.schedule[i].slice(0, 2)) && parseInt(text.slice(3, 5))>=parseInt(score.schedule[i].slice(3, 5)) && parseInt(text.slice(3, 5))<parseInt(score.schedule[i+1].slice(3, 5)))||(parseInt(text.slice(0, 2))+1==parseInt(score.schedule[i].slice(0, 2)) && parseInt(text.slice(0, 2))==parseInt(score.schedule[i+1].slice(0, 2)) && parseInt(text.slice(3, 5))<parseInt(score.schedule[i+1].slice(3, 5)))){%>
-    
+<div class="row"></div>
+    <%
+    for (i=0;i<score.schedule.length;i++){ 
+    let texte = new Date().toLocaleTimeString();
+    let heureActuelle = parseInt(texte.slice(0, 2));
+    let minuteActuelle =  parseInt(texte.slice(3, 5));
+    let heure = parseInt(score.schedule[i].slice(0, 2));
+    let minute = parseInt(score.schedule[i].slice(3, 5));
+    let tpsActuel= heureActuelle*60 + minuteActuelle;
+    let tps = heure*60 + minute;
+    if (i != score.schedule.length-1){
+    let heurePlusUn = parseInt(score.schedule[i+1].slice(0, 2));
+    let minutePlusUn = parseInt(score.schedule[i+1].slice(3, 5));
+    let tpsPlusUn = heurePlusUn*60 + minutePlusUn;
+        if ((tpsActuel>=tps)&&(tpsActuel<tpsPlusUn)){%>
+            <div class="row groupdiv"><div class="col s12 center-align"><h5><%= score.schedule[i] %></h5>
         <% for (k=0;k<score.match.length;k++){%>
-            <div class="row groupdiv">
-                <div class="col s10 offset-s1 center-align">
-                    <h5>Team <%= score.match[k][i][0] %> vs <%= score.match[k][i][1] %></h5>
+            <div class="row groupdiv2 valign-wrapper">
+                <div class="col s10 ">
+                <div class="col s12  underline">
+                <h6>Court <%= k+1 %></h6> 
+                <hr style="width:50%;text-align:left;height:0.1px">
+                </div>                 
+                
+                <div class="col s2 center-align">
+                    <span <%  if (score.match[k][i][0]==userInfo.team[0]){%> class="material-icons yellowcolor schedule-icons"<%}else{%> class="material-icons schedule-icons schedule-icons-white"<%}%>>
+                        local_police
+                    </span>
                 </div>
-            </div>
-        <%};%>
+                <div class="col s3 center-align">
+                    <h5 <%  if (score.match[k][i][0]==userInfo.team[0]){%>class="yellowcolor"<%}%>><%= score.match[k][i][0] %></h5>
+                </div>
+                <div class="col s2 center-align">
+                    <h5>vs</h5>
+                </div>
+                <div class="col s3 center-align">
+                    <h5 <%  if (score.match[k][i][1]==userInfo.team[0]){%>class="yellowcolor"<%}%>><%= score.match[k][i][1] %></h5>
+                </div>
+                <div class="col s2 center-align">
+                    <span <%  if (score.match[k][i][1]==userInfo.team[0]){%> class="material-icons yellowcolor schedule-icons"<%}else{%> class="material-icons schedule-icons schedule-icons-white"<%}%>>
+                        security
+                    </span>
+                </div></div>
+                <div class="col s2 center-align">
+                <a href="/nowPlaying/<%= tournament._id%>/?k=<%=k%>&i=<%=i%>">
+                <div class="col s12 center-align">
+                <span class="material-icons schedule-icons schedule-icons-white">
+                arrow_forward_ios
+                </span></div>
+                </a>
+                </div>
 
-        <%}%> <%}else if{((parseInt(text.slice(0, 2))==parseInt(score.schedule[i].slice(0, 2)) && parseInt(text.slice(3, 5))>=parseInt(score.schedule[i].slice(3, 5))))){%>
-        
+            </div><%};%></div></div>
+
+        <%}%> <%}else if ((tpsActuel>=tps)){%>
+            <div class="row groupdiv"><div class="col s12 center-align"><h5><%= score.schedule[i] %></h5>
         <% for (k=0;k<score.match.length;k++){%>
-            <div class="row groupdiv">
-                <div class="col s10 offset-s1 center-align">
-                    <h5>Team <%= score.match[k][i][0] %> vs <%= score.match[k][i][1] %></h5>
+            <div class="row groupdiv2 valign-wrapper">
+                <div class="col s10 ">
+                <div class="col s12  underline">
+                <h6>Court <%= k+1 %></h6> 
+                <hr style="width:50%;text-align:left;height:0.1px">
+                </div>                 
+                
+                <div class="col s2 center-align">
+                    <span <%  if (score.match[k][i][0]==userInfo.team[0]){%> class="material-icons yellowcolor schedule-icons"<%}else{%> class="material-icons schedule-icons schedule-icons-white"<%}%>>
+                        local_police
+                    </span>
                 </div>
-            </div><%};};}%>
+                <div class="col s3 center-align">
+                    <h5 <%  if (score.match[k][i][0]==userInfo.team[0]){%>class="yellowcolor"<%}%>><%= score.match[k][i][0] %></h5>
+                </div>
+                <div class="col s2 center-align">
+                    <h5>vs</h5>
+                </div>
+                <div class="col s3 center-align">
+                    <h5 <%  if (score.match[k][i][1]==userInfo.team[0]){%>class="yellowcolor"<%}%>><%= score.match[k][i][1] %></h5>
+                </div>
+                <div class="col s2 center-align">
+                    <span <%  if (score.match[k][i][1]==userInfo.team[0]){%> class="material-icons yellowcolor schedule-icons"<%}else{%> class="material-icons schedule-icons schedule-icons-white"<%}%>>
+                        security
+                    </span>
+                </div></div>
+                <div class="col s2 center-align">
+                    <a  href="/nowPlaying/<%= tournament._id%>/?k=<%=k%>&i=<%=i%>">
+                        <div class="col s12 center-align">
+                            <span class="material-icons schedule-icons schedule-icons-white">
+                            arrow_forward_ios
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+            </div><%};%></div></div>
+            <%};}%>
 </div>
             
- 
+
 
 
 

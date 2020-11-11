@@ -32,6 +32,7 @@ router.get('/', pageCtrl4.getHome);
 router.get('/info/:id', pageCtrl5.getTournamentInfo);
 router.get('/schedule/:id', pageCtrl6.getSchedule);
 router.get('/now/:id', pageCtrl7.getNow);
+router.get('/nowPlaying/:id', pageCtrl7.getNowPlaying);
 router.get('/ranking/:id', pageCtrl8.getRanking);
 
 module.exports = router;
