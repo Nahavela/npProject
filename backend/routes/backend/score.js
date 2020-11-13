@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const Team = require('../../models/Score');
-const teamCtrl = require('../../controllers/backend/score');
+const Score = require('../../models/Score');
+const scoreCtrl = require('../../controllers/backend/score');
 const auth = require('../../middleware/auth');
 
 
 
-router.post('/',  teamCtrl.createScore);
-router.get('/',  teamCtrl.getAllStuff);
-router.get('/:id',  teamCtrl.getOneScore);
-router.put('/:id', teamCtrl.modifyScore );
-router.delete('/:id', teamCtrl.deleteScore );
+router.post('/',  scoreCtrl.createScore);
+router.get('/',  scoreCtrl.getAllStuff);
+router.get('/:id',  scoreCtrl.getOneScore);
+router.post('/:id/:k/:i', scoreCtrl.modifyScore );
+router.delete('/:id', scoreCtrl.deleteScore );
 
 module.exports = router;

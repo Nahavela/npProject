@@ -1,6 +1,7 @@
 const Tournament = require('../../models/Tournament');
 const myModule = require('../../public/js/createGroup');
 const Score = require('../../models/Score');
+const Team = require('../../models/Team');
 
 /*exports.createTournament =  (req, res, next) => {
 
@@ -36,9 +37,21 @@ try {
 		schedule : myModule.schedule(tournament.time, tournament.timeOfMatch, tournament.timeBetweenMatch, myModule.createMatch(tournament.group) )
 
 	});
+	for (i=0;i<tournament.team.length;i++){
+	const team = new Team({
+		index : i,
+		name: tournament.team[i],
+		point :0,
+		victory : 0,
+		lost : 0,
+		tournament : tournament.id,
+
+	})
+	team.save()};
 
 	tournament.save()
 	score.save()
+
 		.then(() => res.status(200).redirect('/'))
 
 }catch{
@@ -74,8 +87,11 @@ exports.deleteTournament = (req, res, next) => {
 		.then(() => res.status(200))
 		.catch((error) => res.status(400).json({ error }));
 	Score.deleteOne({ _id: req.params.id })
-		.then(() => res.status(200).redirect('/'))
+		.then(() => res.status(200))
 		.catch((error) => res.status(400).json({ error }));
+	Team.deleteMany({ tournament: req.params.id })
+	.then(() => res.status(200).redirect('/'))
+	.catch((error) => res.status(400).json({ error }));
 };
 
 

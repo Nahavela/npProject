@@ -12,6 +12,7 @@ const tournamentRoutes = require('./routes/backend/tournament');
 const scoreRoutes = require('./routes/backend/score');
 const userRoutes = require('./routes/backend/user');
 const sessionRoutes = require('./routes/backend/session');
+const teamRoutes = require('./routes/backend/team');
 
 //ROUTES FRONTEND
 const pageRoutes = require('./routes/frontend/frontend');
@@ -64,6 +65,7 @@ app.use('/api/tournament', tournamentRoutes);
 app.use('/api/score', scoreRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/session', sessionRoutes);
+app.use('/api/team', teamRoutes);
 
 // Vers ROUTES FRONTEND
 app.use('/', pageRoutes);

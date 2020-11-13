@@ -1,9 +1,12 @@
 <%- include('../template/head'); %>
 <%- include('../template/navTournament')-%>
 <script>
-    let tournament = <%- JSON.stringify(tournament) -%> ; //Outputs the unescaped value into the template
+    let tournament = <%- JSON.stringify(tournament) -%>;
+    let k = <%- k -%>;
+    let i = <%- i -%>;
+     //Outputs the unescaped value into the template
 </script>
-<script type="text/javascript" src="/js/counter.js"></script>
+
 
 <!------------------------------------------------------------------------------------------->
 
@@ -29,27 +32,56 @@
                 </span>
         </div>
     </div>
-    <div id="resultAB" class="row groupdiv" style="display:none">
-        <div class="col s12 center-align "><h6>Is this result correct ? </h6></div>
-        <div id="resultA"  class="col s4 center-align white-text"> </div>
-    
-        <div   class="col s4 center-align white-text"> -</div>
-        <div id="resultB"  class="col s4 center-align white-text"> </div>
-        <div class="col s6 center-align white-text">
-            <div type="button" onclick="undo()" class=" btnvideretour">
-                <span class="material-icons history">
-                    check
-                </span> 
-            </div>
-        </div>
-        <div class="col s6 center-align white-text">
-            <div type="button" onclick="hide()" class=" btnvideretour">
-                <span class="material-icons history">
-                    clear
-                </span> 
-            </div>
-        </div>
-    </div>
-<!------------------------------------------------------------------------------------------->
 
+    
+        <div id="resultAB" class="row groupdiv" style="display:none">
+            <div class="col s12 center-align "><h6>Is this result correct ? </h6></div>
+            <div id="resultA"   class="col s5 center-align white-text"> </div>
+            <div class="col s2 center-align white-text"> - </div>
+            <div id="resultB"   class="col s5 center-align white-text"></div>
+
+
+            <form id="form1" action="http://localhost:3000/api/score/<%= score._id%>/<%= k%>/<%= i%>"  method="POST">
+                <input id="resultIA" type="hidden" name="team.<%= num0%>.point" autocomplete="off" value="<%= team0.point%>" class="col s5 center-align white-text"> 
+                <input id="resultIB" type="hidden" name="team.<%= num1%>.point"  autocomplete="off" value="<%= team1.point%>"class="col s5 center-align white-text">
+                <input id="result0" type="hidden" name="results" autocomplete="off" class="col s12 center-align white-text result0"> 
+                <input id="winA" type="hidden" name="team.<%= num0%>.victory" autocomplete="off" value="<%= team0.victory%>" class="col s12 center-align white-text"> 
+                <input id="lostA" type="hidden" name="team.<%= num0%>.lost" autocomplete="off" value="<%= team0.lost%>"class="col s12 center-align white-text"> 
+                <input id="winB" type="hidden" name="team.<%= num1%>.victory" autocomplete="off" value="<%= team1.victory%>"class="col s12 center-align white-text"> 
+                <input id="lostB" type="hidden" name="team.<%= num1%>.lost" autocomplete="off" value="<%= team1.lost%>"class="col s12 center-align white-text">
+            
+        <!--<form id="form2" action="http://localhost:3000/api/team/0/<%= team0._id%>"  method="POST">-->
+            <input  type="hidden" name="id0" autocomplete="off" value="<%= team0._id%>" id="idO">
+            <input  type="hidden" name="point0" autocomplete="off" value="<%= team0.point%>" id="1resultIA"> 
+            <input  type="hidden" name="victory0" autocomplete="off" value="<%= team0.victory%>" id="1winA"> 
+            <input  type="hidden" name="lost0" autocomplete="off" value="<%= team0.lost%>" id="1lostA"> 
+
+        
+            
+        <!--<form id="form3" action="http://localhost:3000/api/team/1/<%= team1._id%>"  method="POST">-->
+            <input  type="hidden" name="id1"  autocomplete="off" value="<%= team1._id%>"id="id1">
+            <input  type="hidden" name="point1"  autocomplete="off" value="<%= team1.point%>"id="2resultIB">
+            <input  type="hidden" name="victory1" autocomplete="off" value="<%= team1.victory%>"id="2winB"> 
+            <input  type="hidden" name="lost1" autocomplete="off" value="<%= team1.lost%>"id="2lostB">     
+        </form>
+       
+            
+            <div onClick="submitForms()" class="col s6 center-align white-text ">
+                <div type="button" class=" btnvideretour"> 
+                    <span class="material-icons history">
+                            check
+                    </span> 
+                </div>   
+            </div>
+            <div class="col s6 center-align white-text">
+                <div type="button" onclick="hide()" class=" btnvideretour">
+                    <span class="material-icons history">
+                        clear
+                    </span> 
+                </div>
+            </div>
+        </div>
+   
+<!------------------------------------------------------------------------------------------->
+<script type="text/javascript" src="/js/counter.js"></script>
 <%- include('../template/footer'); %>

@@ -59,22 +59,16 @@ function createteam(array1){
             point:0,
 			victory:0,
 			lost:0,
-			egal:0,
+            egal:0,
+            
         }
         const obj = Object.assign({name}, label);
-        arr.push(obj)}
+        arr.push(obj)
 
-    const convertArrayToObject = (array, key) => {
-        const initialValue = {};
-        return array.reduce((obj, item) => {
-        return {
-            ...obj,
-            [item[key]]: item,
-        };
-        }, initialValue);
-    };
-    let objectFini =convertArrayToObject(arr,'name');
-    return objectFini
+        
+   }
+   const objectFini = {...arr};
+        return objectFini
 },
 
 

@@ -61,14 +61,23 @@ exports.getNowPlaying = async (req, res, next) => {
     let tournament = await fetch(urlTournament, myInit);
     tournament = await tournament.json();
 
-    let urlScore = `http://localhost:3000/api/score/${req.params.id}`;
+    let urlScore = `http://localhost:3000/api/score/${req.params.id}/`;
     let score = await fetch(urlScore, myInit);
     score = await score.json();
     i = req.query.i;
     k = req.query.k;
+    num0 = req.query.num0;
+    num1 = req.query.num1;
+    let urlteam0 = `http://localhost:3000/api/team/${req.query.num0}`;
+    let team0 = await fetch(urlteam0, myInit);
+    team0 = await team0.json();
+    let urlteam1 = `http://localhost:3000/api/team/${req.query.num1}`;
+    let team1 = await fetch(urlteam1, myInit);
+    team1 = await team1.json();
 
 
-    res.render(`pages/nowPlaying`, {menuId:'Now Playing', userInfo, tournament, score, i, k})
+
+    res.render(`pages/nowPlaying`, {menuId:'Now Playing', userInfo, tournament, score, i, k, num0, num1, team0, team1})
 
 } catch {
 

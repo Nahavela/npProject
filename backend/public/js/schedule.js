@@ -67,3 +67,55 @@ for (i=0;i<arr.length;i++){
         //document.getElementsByClassName("target")[i].parentNode.parentNode.style.backgroundColor = "rgba(206, 204, 100, 0.1)" ;
         document.getElementsByClassName("target")[i].parentNode.parentNode.style.boxShadow= "0px 0px 5px 4px rgba(231,166,26,0.45)";}}
 }
+
+
+function createteam(array1){
+    let arr =[];
+    for (i=0; i<array1.length; i++){
+        let name = array1[i]
+        label={
+            point:0,
+			victory:0,
+			lost:0,
+            egal:0,
+            
+        }
+        const obj = Object.assign({name}, label);
+        arr.push(obj)
+
+        
+   }
+   const objectFini = {...arr};
+   console.log(arr)
+   return objectFini
+}
+
+createteam(["a","b","c"])
+
+function createteam2(array1){
+    let arr =[];
+    for (i=0; i<array1.length; i++){
+        let name = array1[i]
+        label={
+            point:0,
+			victory:0,
+			lost:0,
+			egal:0,
+        }
+        const obj = Object.assign({name}, label);
+        arr.push(obj)}
+
+    const convertArrayToObject = (array, key) => {
+        const initialValue = {};
+        return array.reduce((obj, item) => {
+        return {
+            ...obj,
+            [item[key]]: item,
+        };
+        }, initialValue);
+    };
+    let objectFini =convertArrayToObject(arr,'name');
+    console.log(objectFini)
+}
+
+createteam2(["a","b","c"])

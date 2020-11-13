@@ -1,4 +1,5 @@
 const Score = require('../../models/Score');
+const Team = require('../../models/Team');
 
 exports.createScore = (req, res, next) => {
 	const Score = new Score({
@@ -23,8 +24,27 @@ exports.getOneScore = (req, res, next) => {
 };
 
 exports.modifyScore = (req, res, next) => {
-	Score.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
-		.then(() => res.status(200).json({ message: 'Objet modifié !' }))
+	Score.updateOne({ _id: req.params.id }, {
+		...req.body,
+		$push: {result:  [[req.params.k,req.params.i,req.body.results]]}
+	} )
+
+	
+		Team.updateOne({ _id: req.body.id0 }, {
+			point : req.body.point0,
+			victory: req.body.victory0,
+			lost : req.body.lost0
+		} )
+
+
+	
+		Team.updateOne({ _id: req.body.id1 }, {
+			point : req.body.point1,
+			victory: req.body.victory1,
+			lost : req.body.lost1
+		} )
+
+		.then(() => res.status(200).redirect(`/schedule/${req.params.id}`))
 		.catch((error) => res.status(400).json({ error }));
 };
 

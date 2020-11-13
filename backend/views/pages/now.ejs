@@ -46,7 +46,12 @@
                     </span>
                 </div></div>
                 <div class="col s2 center-align">
-                <a href="/nowPlaying/<%= tournament._id%>/?k=<%=k%>&i=<%=i%>">
+                    <% for (u=0;u<tournament.team.length;u++) { if (tournament.team[u] == score.match[k][i][0]){
+                        num0 = u
+                    }else if (tournament.team[u] == score.match[k][i][1]){ num1 = u}
+            
+                    }; %>
+                <a href="/nowPlaying/<%= tournament._id%>/?k=<%=k%>&i=<%=i%>&num0=<%=num0%>&num1=<%=num1%>">
                 <div class="col s12 center-align">
                 <span class="material-icons schedule-icons schedule-icons-white">
                 arrow_forward_ios
@@ -86,7 +91,12 @@
                     </span>
                 </div></div>
                 <div class="col s2 center-align">
-                    <a  href="/nowPlaying/<%= tournament._id%>/?k=<%=k%>&i=<%=i%>">
+                    <% for (u=0;u<tournament.team.length;u++) { if (tournament.team[u] == score.match[k][i][0]){
+                        num0 = u
+                    }else if (tournament.team[u] == score.match[k][i][1]){ num1 = u}
+            
+                    }; %>
+                    <a  href="/nowPlaying/<%= tournament._id%>/?k=<%=k%>&i=<%=i%>&num0=<%=num0%>&num1=<%=num1%>">
                         <div class="col s12 center-align">
                             <span class="material-icons schedule-icons schedule-icons-white">
                             arrow_forward_ios
