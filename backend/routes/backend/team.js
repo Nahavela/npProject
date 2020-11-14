@@ -8,9 +8,9 @@ const auth = require('../../middleware/auth');
 
 router.post('/',  teamCtrl.createTeam);
 router.get('/',  teamCtrl.getAllStuff);
-router.get('/:index',  teamCtrl.getOneTeam);
-router.post('/0/:id', teamCtrl.modifyTeam0 );
-router.post('/1/:id', teamCtrl.modifyTeam1 );
+router.get('/:id/:index',  teamCtrl.getOneTeam);
+router.get('/:id',  teamCtrl.getTeams);
+router.post('/:id', teamCtrl.modifyTeam );
 router.delete('/:id', teamCtrl.deleteTeam );
 
 module.exports = router;

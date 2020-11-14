@@ -17,26 +17,19 @@ exports.getAllStuff = (req, res, next) => {
 };
 
 exports.getOneTeam = (req, res, next) => {
-	Team.findOne({ index: req.params.index })
+	Team.findOne({index: req.params.index, tournament: req.params.id  })
 		.then((Team) => res.status(200).json(Team))
 		.catch((error) => res.status(404).json({ error }));
 };
 
-exports.modifyTeam0 = (req, res, next) => {
+exports.modifyTeam = (req, res, next) => {
 	Team.updateOne({ _id: req.params.id }, {
 		...req.body,
-	} )
+	})
 	.then(() => res.status(200).redirect("/"))
 	.catch((error) => res.status(400).json({ error }));
 };
 
-exports.modifyTeam1 = (req, res, next) => {
-	Team.updateOne({ _id: req.params.id }, {
-		...req.body,
-	} )
-		.then(() => res.status(200).redirect("/"))
-		.catch((error) => res.status(400).json({ error }));
-};
 
 exports.deleteTeam = (req, res, next) => {
 	Team.deleteOne({ _id: req.params.id })
@@ -44,6 +37,8 @@ exports.deleteTeam = (req, res, next) => {
 		.catch((error) => res.status(400).json({ error }));
 };
 
-
-
-
+exports.getTeams = (req, res, next) => {
+    Team.find( {tournament : req.params.id})
+    .then((Teams) => res.status(200).json(Teams))
+    .catch((error) => res.status(400).json({ error }));
+};

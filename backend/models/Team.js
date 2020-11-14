@@ -6,7 +6,8 @@ const teamSchema = mongoose.Schema({
   victory:{ type: Number},
   lost:{type: Number},
   tournament : {type: String},
-  index : {type: Number}
+  index : {type: Number},
+  group : {type: Number}
 });
 
 module.exports = mongoose.model('Team', teamSchema);

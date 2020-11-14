@@ -23,10 +23,15 @@ exports.getRanking = async (req, res, next) => {
     let urlTournament = `http://localhost:3000/api/tournament/${req.params.id}`;
     let tournament = await fetch(urlTournament, myInit);
     tournament = await tournament.json();
+
+    let urlTeam = `http://localhost:3000/api/team/${req.params.id}`;
+    let team = await fetch(urlTeam, myInit);
+    team = await team.json();
+  
   
 
 
-    res.render(`pages/ranking`, { menuId:'Ranking', userInfo, tournament})
+    res.render(`pages/ranking`, { menuId:'Ranking', userInfo, tournament, team})
 
 } catch {
 

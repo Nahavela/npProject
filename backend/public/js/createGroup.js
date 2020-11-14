@@ -111,8 +111,19 @@ function schedule(time, timOfMatch, timeBetweenMatch, numberOfMatch){
     }return schedule
     },
 
-}
+wichGroup :
+function wichGroup(group,teamName){
 
+    for(let i = 0; i < group.length; i++){
+        for(let j = 0; j < group[i].length; j++){
+    
+            if (teamName == group[i][j]){return i+1}
+        }
+    }
+
+
+},
+}
 
 
 

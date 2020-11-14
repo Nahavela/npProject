@@ -314,6 +314,8 @@ h1, h2, h3, h4, h6, h5, input:not([type=submit]) {
 }
 .groupdiv {
     width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .groupdiv2 {
@@ -422,4 +424,8 @@ margin-bottom: 10px;
 
 .white-text {
     color: white;
+}
+
+table{
+    color:white
 }

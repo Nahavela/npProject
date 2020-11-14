@@ -45,6 +45,7 @@ try {
 		victory : 0,
 		lost : 0,
 		tournament : tournament.id,
+		group : myModule.wichGroup(tournament.group,tournament.team[i])
 
 	})
 	team.save()};

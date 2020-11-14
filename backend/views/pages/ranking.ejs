@@ -1,4 +1,48 @@
 <%- include('../template/head'); %>
 <%- include('../template/navTournament')-%>
+<div class="content center-align">
+<% team.sort(function(a, b) {
+    return a["victory"] - b["victory"] || a["point"] - b["point"];
+}); team.reverse()
+%>
+<% 
+for (i=0; i<tournament.group.length;i++){
+
+    team.group == i+1
+}%>
+
+
+<% for (i=0; i<tournament.group.length;i++){
+let newTeam = team.filter(function(a) {
+	return a.group == i+1;
+});
+
+%>
+<div class="groupdiv center-align">
+    <table class="centered">
+        <thead><h5>Group <%=i+1%> </h5>
+          <tr>
+            <th>Place</th>
+            <th>Name</th>
+            <th>Victory</th>  
+            <th>Point</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+            <% for (j=0; j<newTeam.length;j++){%>
+          <tr>
+            <td><%= j+1%></td>
+            <td><%= newTeam[j].name%></td>
+            <td><%= newTeam[j].victory%></td>
+            <td><%= newTeam[j].point%></td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+    </div>
+<%}%>
+</div>
 
 <%- include('../template/footer'); %>

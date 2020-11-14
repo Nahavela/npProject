@@ -50,20 +50,20 @@
                 <input id="winB" type="hidden" name="team.<%= num1%>.victory" autocomplete="off" value="<%= team1.victory%>"class="col s12 center-align white-text"> 
                 <input id="lostB" type="hidden" name="team.<%= num1%>.lost" autocomplete="off" value="<%= team1.lost%>"class="col s12 center-align white-text">
             
-        <!--<form id="form2" action="http://localhost:3000/api/team/0/<%= team0._id%>"  method="POST">-->
-            <input  type="hidden" name="id0" autocomplete="off" value="<%= team0._id%>" id="idO">
-            <input  type="hidden" name="point0" autocomplete="off" value="<%= team0.point%>" id="1resultIA"> 
-            <input  type="hidden" name="victory0" autocomplete="off" value="<%= team0.victory%>" id="1winA"> 
-            <input  type="hidden" name="lost0" autocomplete="off" value="<%= team0.lost%>" id="1lostA"> 
+            <!--<form id="form2" action="http://localhost:3000/api/team/0/<%= team0._id%>"  method="POST">-->
+                <input  type="hidden" name="id0" autocomplete="off" value="<%= team0._id%>" id="id0">
+                <input  type="hidden" name="point0" autocomplete="off" value="<%= team0.point%>" id="1resultIA"> 
+                <input  type="hidden" name="victory0" autocomplete="off" value="<%= team0.victory%>" id="1winA"> 
+                <input  type="hidden" name="lost0" autocomplete="off" value="<%= team0.lost%>" id="1lostA"> 
 
-        
             
-        <!--<form id="form3" action="http://localhost:3000/api/team/1/<%= team1._id%>"  method="POST">-->
-            <input  type="hidden" name="id1"  autocomplete="off" value="<%= team1._id%>"id="id1">
-            <input  type="hidden" name="point1"  autocomplete="off" value="<%= team1.point%>"id="2resultIB">
-            <input  type="hidden" name="victory1" autocomplete="off" value="<%= team1.victory%>"id="2winB"> 
-            <input  type="hidden" name="lost1" autocomplete="off" value="<%= team1.lost%>"id="2lostB">     
-        </form>
+                
+            <!--<form id="form3" action="http://localhost:3000/api/team/1/<%= team1._id%>"  method="POST">-->
+                <input  type="hidden" name="id1"  autocomplete="off" value="<%= team1._id%>"id="id1">
+                <input  type="hidden" name="point1"  autocomplete="off" value="<%= team1.point%>"id="2resultIB">
+                <input  type="hidden" name="victory1" autocomplete="off" value="<%= team1.victory%>"id="2winB"> 
+                <input  type="hidden" name="lost1" autocomplete="off" value="<%= team1.lost%>"id="2lostB">     
+            </form>
        
             
             <div onClick="submitForms()" class="col s6 center-align white-text ">
@@ -74,7 +74,7 @@
                 </div>   
             </div>
             <div class="col s6 center-align white-text">
-                <div type="button" onclick="hide()" class=" btnvideretour">
+                <div type="button" onclick="window.location.reload();" class=" btnvideretour">
                     <span class="material-icons history">
                         clear
                     </span> 
