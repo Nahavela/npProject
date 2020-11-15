@@ -41,7 +41,7 @@
             <div id="resultB"   class="col s5 center-align white-text"></div>
 
 
-            <form id="form1" action="http://localhost:3000/api/score/<%= score._id%>/<%= k%>/<%= i%>"  method="POST">
+            <form id="form1" action="https://npprojectnahavela.herokuapp.com/api/score/<%= score._id%>/<%= k%>/<%= i%>"  method="POST">
                 <input id="resultIA" type="hidden" name="team.<%= num0%>.point" autocomplete="off" value="<%= team0.point%>" class="col s5 center-align white-text"> 
                 <input id="resultIB" type="hidden" name="team.<%= num1%>.point"  autocomplete="off" value="<%= team1.point%>"class="col s5 center-align white-text">
                 <input id="result0" type="hidden" name="results" autocomplete="off" class="col s12 center-align white-text result0"> 
@@ -50,7 +50,7 @@
                 <input id="winB" type="hidden" name="team.<%= num1%>.victory" autocomplete="off" value="<%= team1.victory%>"class="col s12 center-align white-text"> 
                 <input id="lostB" type="hidden" name="team.<%= num1%>.lost" autocomplete="off" value="<%= team1.lost%>"class="col s12 center-align white-text">
             
-            <!--<form id="form2" action="http://localhost:3000/api/team/0/<%= team0._id%>"  method="POST">-->
+            <!--<form id="form2" action="https://npprojectnahavela.herokuapp.com/api/team/0/<%= team0._id%>"  method="POST">-->
                 <input  type="hidden" name="id0" autocomplete="off" value="<%= team0._id%>" id="id0">
                 <input  type="hidden" name="point0" autocomplete="off" value="<%= team0.point%>" id="1resultIA"> 
                 <input  type="hidden" name="victory0" autocomplete="off" value="<%= team0.victory%>" id="1winA"> 
@@ -58,7 +58,7 @@
 
             
                 
-            <!--<form id="form3" action="http://localhost:3000/api/team/1/<%= team1._id%>"  method="POST">-->
+            <!--<form id="form3" action="https://npprojectnahavela.herokuapp.com/api/team/1/<%= team1._id%>"  method="POST">-->
                 <input  type="hidden" name="id1"  autocomplete="off" value="<%= team1._id%>"id="id1">
                 <input  type="hidden" name="point1"  autocomplete="off" value="<%= team1.point%>"id="2resultIB">
                 <input  type="hidden" name="victory1" autocomplete="off" value="<%= team1.victory%>"id="2winB"> 

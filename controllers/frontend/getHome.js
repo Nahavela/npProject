@@ -10,7 +10,7 @@ exports.getHome = async (req, res, next) => {
     const token = req.cookies['token'];
     const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
     const userId = decodedToken.userId;
-    let url = `http://localhost:3000/api/user/user/${userId}`;
+    let url = `https://npprojectnahavela.herokuapp.com/api/user/user/${userId}`;
     myInit = {
         headers: {
             'Authorization': 'Bearer ' + token
@@ -20,7 +20,7 @@ exports.getHome = async (req, res, next) => {
     userInfo = await userInfo.json();
     
 
-    let urlTournaments = `http://localhost:3000/api/tournament/`;
+    let urlTournaments = `https://npprojectnahavela.herokuapp.com/api/tournament/`;
     let tournaments = await fetch(urlTournaments, myInit);
     tournaments = await tournaments.json();
 

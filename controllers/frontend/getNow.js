@@ -10,7 +10,7 @@ exports.getNow = async (req, res, next) => {
     const token = req.cookies['token'];
     const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
     const userId = decodedToken.userId;
-    let url = `http://localhost:3000/api/user/user/${userId}`;
+    let url = `https://npprojectnahavela.herokuapp.com/api/user/user/${userId}`;
     myInit = {
         headers: {
             'Authorization': 'Bearer ' + token
@@ -20,11 +20,11 @@ exports.getNow = async (req, res, next) => {
     userInfo = await userInfo.json();
     
 
-    let urlTournament = `http://localhost:3000/api/tournament/${req.params.id}`;
+    let urlTournament = `https://npprojectnahavela.herokuapp.com/api/tournament/${req.params.id}`;
     let tournament = await fetch(urlTournament, myInit);
     tournament = await tournament.json();
 
-    let urlScore = `http://localhost:3000/api/score/${req.params.id}`;
+    let urlScore = `https://npprojectnahavela.herokuapp.com/api/score/${req.params.id}`;
     let score = await fetch(urlScore, myInit);
     score = await score.json();
 
@@ -47,7 +47,7 @@ exports.getNowPlaying = async (req, res, next) => {
     const token = req.cookies['token'];
     const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
     const userId = decodedToken.userId;
-    let url = `http://localhost:3000/api/user/user/${userId}`;
+    let url = `https://npprojectnahavela.herokuapp.com/api/user/user/${userId}`;
     myInit = {
         headers: {
             'Authorization': 'Bearer ' + token
@@ -57,21 +57,21 @@ exports.getNowPlaying = async (req, res, next) => {
     userInfo = await userInfo.json();
     
 
-    let urlTournament = `http://localhost:3000/api/tournament/${req.params.id}`;
+    let urlTournament = `https://npprojectnahavela.herokuapp.com/api/tournament/${req.params.id}`;
     let tournament = await fetch(urlTournament, myInit);
     tournament = await tournament.json();
 
-    let urlScore = `http://localhost:3000/api/score/${req.params.id}/`;
+    let urlScore = `https://npprojectnahavela.herokuapp.com/api/score/${req.params.id}/`;
     let score = await fetch(urlScore, myInit);
     score = await score.json();
     i = req.query.i;
     k = req.query.k;
     num0 = req.query.num0;
     num1 = req.query.num1;
-    let urlteam0 = `http://localhost:3000/api/team/${req.params.id}/${req.query.num0}`;
+    let urlteam0 = `https://npprojectnahavela.herokuapp.com/api/team/${req.params.id}/${req.query.num0}`;
     let team0 = await fetch(urlteam0, myInit);
     team0 = await team0.json();
-    let urlteam1 = `http://localhost:3000/api/team/${req.params.id}/${req.query.num1}`;
+    let urlteam1 = `https://npprojectnahavela.herokuapp.com/api/team/${req.params.id}/${req.query.num1}`;
     let team1 = await fetch(urlteam1, myInit);
     team1 = await team1.json();
 

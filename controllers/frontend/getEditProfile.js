@@ -9,7 +9,7 @@ exports.getEditProfile = async (req, res, next) => {
         const token = req.cookies['token'];
         const decodedToken = jwt.verify(token, 'RANDOM_TOKEN_SECRET');
         const userId = decodedToken.userId;
-        let url = `http://localhost:3000/api/user/user/${userId}`;
+        let url = `https://npprojectnahavela.herokuapp.com/api/user/user/${userId}`;
 
         myInit = {
             headers: {
