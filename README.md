@@ -32,7 +32,12 @@ https://www.figma.com/proto/1Eu02p8tntlVAwZ8J6DpdC/np?node-id=74%3A2226&scaling=
 
 ## Data details
 
+![image](https://user-images.githubusercontent.com/66432325/99189743-fb389600-2762-11eb-9a3e-c261832d7b7e.png)
+
 ## Schéma de base de données
+
+![image](https://user-images.githubusercontent.com/66432325/99189759-14d9dd80-2763-11eb-9c6c-4e875fa8ff92.png)
+![image](https://user-images.githubusercontent.com/66432325/99189774-291dda80-2763-11eb-8552-3f0e32331523.png)
 
 ## Autre
 
