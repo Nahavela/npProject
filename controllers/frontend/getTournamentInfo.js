@@ -23,7 +23,7 @@ exports.getTournamentInfo = async (req, res, next) => {
     let urlTournament = `https://npprojectnahavela.herokuapp.com/api/tournament/${req.params.id}`;
     let tournament = await fetch(urlTournament, myInit);
     tournament = await tournament.json();
-  
+
 
 
     res.render('pages/info', {menuId:'Info', userInfo, tournament})

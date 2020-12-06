@@ -91,8 +91,8 @@ exports.deleteTournament = (req, res, next) => {
 		.then(() => res.status(200))
 		.catch((error) => res.status(400).json({ error }));
 	Team.deleteMany({ tournament: req.params.id })
-	.then(() => res.status(200).redirect('/'))
-	.catch((error) => res.status(400).json({ error }));
+		.then(() => res.status(200).redirect('/'))
+		.catch((error) => res.status(400).json({ error }));
 };
 
 
