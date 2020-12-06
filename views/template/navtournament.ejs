@@ -12,7 +12,22 @@
     </div>
 
   </nav>
-
+  <div class="nav-content-bas" >
+    <ul class="tabs tabs-transparent" >
+      <li class="tab"><a <% if (menuId === 'Info') { %>class="active" <% } %> href="/info/<%= tournament._id%>" target="_self"><span class="material-icons">
+        info
+        </span></a></li>
+      <li class="tab"><a <% if (menuId === 'Schedule') { %>class="active" <%} %> href="/schedule/<%= tournament._id%>" target="_self"><span class="material-icons">
+        insert_invitation
+        </span></a></li>
+      <li class="tab"><a <% if (menuId === 'Now' ||menuId === 'Now Playing') { %>class="active" <%} %> href="/now/<%= tournament._id%>" target="_self"><span class="material-icons">
+        sports
+        </span></a></li>
+      <li class="tab"><a <% if (menuId === 'Ranking') { %>class="active" <%} %> href="/ranking/<%= tournament._id%>" target="_self"><span class="material-icons">
+        emoji_events
+        </span></a></li>
+    </ul>
+  </div>
 
 
 
