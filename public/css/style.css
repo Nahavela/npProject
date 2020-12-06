@@ -213,7 +213,7 @@ h1, h2, h3, h4, h6, h5, input:not([type=submit]) {
 .content {
 
     height: calc(100% - 120px); 
-    overflow-x:hidden; 
+    overflow-x: hidden; 
     overflow-y: scroll;
 }
 
